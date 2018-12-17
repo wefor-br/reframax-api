@@ -11,7 +11,7 @@ import { JwtAuthGuard } from '../seguranca/guards/jwt-auth.guard';
 export class PlanejamentosController {
 
     @Get()
-    @ApiResponse({status : 200, description: 'Lista de Planejamentos retornadas', })
+    @ApiResponse({status : 200, description: 'Lista de Planejamentos retornadas', type: Planejamento, isArray: true})
     @UseGuards(JwtAuthGuard)
     async findAll() : Promise<Planejamento[]> {
         return Array();
