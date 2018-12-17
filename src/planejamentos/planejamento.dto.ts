@@ -54,7 +54,6 @@ export class Execucao {
     readonly ate: string;
 }
 
-
 export class Atividade {
 
     @ApiModelProperty()
@@ -95,7 +94,6 @@ export class Atividade {
 
 }
 
-
 export class Planejamento {
 
     @ApiModelProperty()
@@ -111,3 +109,10 @@ export class Planejamento {
     readonly atividades: Atividade[];
 }
 
+export class PlanejamentosComCheckpoint {
+    @ApiModelProperty()
+    readonly checkpoint: number;
+
+    @ApiModelProperty({type: [Planejamento]})
+    readonly planejamentos: Planejamento[];
+}

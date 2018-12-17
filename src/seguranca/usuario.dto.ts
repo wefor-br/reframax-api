@@ -1,4 +1,4 @@
-import { ApiModelProperty } from "@nestjs/swagger";
+import { ApiModelProperty } from '@nestjs/swagger';
 
 export class Usuario {
 
@@ -19,6 +19,9 @@ export class Login {
 
     @ApiModelProperty()
     readonly matricula: string;
+
+    @ApiModelProperty()
+    readonly dispositivo: string;
 
     @ApiModelProperty()
     readonly senha: string;
