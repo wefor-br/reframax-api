@@ -7,11 +7,10 @@ export class SegurancaService {
 
     constructor(private readonly jwtService: JwtService) {}
 
-
     async createToken(usuarioJwt: Login) {
         const tokenDeAcesso = this.jwtService.sign(usuarioJwt);
 
-        const token : Token = {
+        const token: Token = {
             expiraEm: 3600,
             tokenDeAcesso,
         };
@@ -20,6 +19,6 @@ export class SegurancaService {
     }
 
     async validateUser(payload: Login) {
-        return {}
+        return {};
     }
 }

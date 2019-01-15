@@ -1,0 +1,31 @@
+version: '3.5'
+
+services:
+
+  mongo-reframax:
+    image: mongo
+    container_name: mongo-reframax
+    volumes:
+    - ~/data/mongodb/db:/data/db
+    ports:
+    - 27017
+    networks:
+    - reframax-network
+
+  reframax-api:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: reframax-api
+    container_name: reframax-api
+    ports:
+    - 5000:500
+    depends_on:
+    - mongo-reframax
+    networks:
+    - reframax-network
+
+networks:
+  reframax-network:
+    driver: bridge
+    name: reframax-network
